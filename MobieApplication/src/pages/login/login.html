@@ -1,0 +1,49 @@
+<!-- <ion-content padding center text-center class="bg">
+  <img src="assets/imgs/LogoApp.png" alt="logo">
+  <ion-title><h1 color="light">เข้าสู่ระบบ</h1></ion-title>
+
+  <ion-list>
+    <ion-item class="style">
+      <ion-label ><ion-icon name="person" color="pantone" ></ion-icon></ion-label>
+      <ion-input type="text" placeholder="Username"  ></ion-input>
+  </ion-item>
+
+  <br>
+      <ion-item class="style">
+        <ion-label ><ion-icon name="key"  color="pantone" ></ion-icon></ion-label>
+        <ion-input type="password" placeholder="Password" ></ion-input>
+        </ion-item>
+  </ion-list>
+
+  <br>
+  <button ion-button full round  id="login"><span id="fontlogin">เข้าสู่ระบบ</span></button>
+  <button ion-button full round  >ลงทะเบียน</button>
+
+</ion-content> -->
+<ion-content padding center text-center class="bg">
+  <img src="assets/imgs/LogoApp.png" alt="logo">
+  <ion-card>
+    <ion-card-header>
+      <h1>Welcome</h1>
+    </ion-card-header>
+    <ion-card-content>
+       <ion-list no-lines>
+         <ion-item >
+            <ion-label><ion-icon name="person" color="dark"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Username" [(ngModel)]="inputlogin.username"></ion-input>
+          </ion-item>
+          <ion-item  >
+            <ion-label><ion-icon name="key" color="dark" ></ion-icon></ion-label>
+            <ion-input type="password" placeholder="Password" [(ngModel)]="inputlogin.password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <p text-right>Forgot password ?<a> Get here</a></p>
+          </ion-item>
+          <button ion-button full round id ="button-login" (click)="login()"><span>เข้าสู่ระบบ</span></button>
+          <button ion-button full round id ="button-regis" (click)="register()"><span>ลงทะเบียน</span></button>
+       </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

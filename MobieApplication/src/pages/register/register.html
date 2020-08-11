@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding text-center class="bg">
+<ion-card>
+  <ion-card-content>
+    <ion-list no-lines >
+     <ion-item>
+       <ion-label floating>First Name</ion-label>
+       <ion-input type="text" [(ngModel)]="regisResult.firstname"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="regisResult.lastname" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="regisResult.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="regisResult.userid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="regisResult.password"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full round id ="button-regis" (click)="Register()" ><span>ยืนยันลงทะเบียน</span></button>
+    <p>Already have a account?</p>
+    <button ion-button full round id ="button-login"><span>เข้าสู่ระบบ</span></button>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-content>

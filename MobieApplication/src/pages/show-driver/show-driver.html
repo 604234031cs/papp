@@ -1,0 +1,60 @@
+<!--
+  Generated template for the ShowDriverPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title text-center>
+      สถานะการทำงาน
+    </ion-title>
+  </ion-navbar>
+
+    <ion-segment [(ngModel)]="driver" style="background-color: rgb(55, 134, 55);"  >
+      <ion-segment-button value="Online" color="secondary" >
+       <b> Online </b>
+      </ion-segment-button>
+
+      <!-- <ion-segment-button value="Offline" >
+        Offline
+      </ion-segment-button> -->
+      <ion-segment [(ngModel)]="driver" style="background-color: rgb(255, 0, 0);" >
+        <ion-segment-button value="Offline"  >
+         <b> Offline </b>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg" >
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div [ngSwitch]="driver"  >
+    <ion-list *ngSwitchCase="'Online'"  >
+      <ion-item *ngFor="let get of statusdriveron">
+        <ion-thumbnail item-start>
+          <img src="/assets/imgs/LogoApp.png">
+        </ion-thumbnail>
+        <h2>{{get.name}} &nbsp; {{get.lastname}}</h2>
+        <p>อยู่บนเส้นทาง</p>
+        <button ion-button clear item-end (click)="showMapTraking(get.d_id)">ติดตาม</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Offline'">
+      <ion-item *ngFor="let get of statusdriveroff">
+        <ion-thumbnail item-start>
+          <img src="/assets/imgs/LogoApp.png">
+        </ion-thumbnail>
+        <h2>{{get.name}} &nbsp; {{get.lastname}}</h2>
+        <p>Hayao Miyazaki • 1988</p>
+        <button ion-button clear item-end>ติดตาม</button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
